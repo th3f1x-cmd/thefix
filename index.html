@@ -5,12 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>.responsive-text {
-  font-size: 5vw; /* 5% of the viewport width */
+  font-size: 5vw; /* 5% of the viewport width */ 
 }
 </style>
 
     <title>The Fix</title>
     <style>
+    
+
         body {
             background-color: white;
             color: black;
@@ -89,6 +91,17 @@
 
 </p>
     </div>
+      <script>
+    // Fix 100vh issues on mobile browsers
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+    // Optional: Update on resize
+    window.addEventListener('resize', () => {
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    });
+  </script>
 </body>
 </html>
-
+<script src="viewport-fix.js"></script>
